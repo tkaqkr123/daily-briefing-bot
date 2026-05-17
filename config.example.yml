@@ -1,7 +1,7 @@
 schedule: "0 8 * * *"
 
 slack:
-  channel: "#daily-briefing"
+  channel: "#daily-brefing-bot"
 
 sources:
   weather:
