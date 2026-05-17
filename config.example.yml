@@ -10,10 +10,12 @@ sources:
   rss:
     enabled: true
     feeds:
+      - url: "https://rss.etnews.com/Section901.xml"
+        label: "전자신문"
+      - url: "https://www.bloter.net/feed"
+        label: "블로터"
       - url: "https://news.ycombinator.com/rss"
         label: "Hacker News"
-      - url: "https://feeds.feedburner.com/TechCrunch"
-        label: "TechCrunch"
   github:
     enabled: false
     repos: []
