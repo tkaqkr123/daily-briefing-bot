@@ -1,0 +1,20 @@
+schedule: "0 8 * * *"
+
+slack:
+  channel: "#daily-briefing"
+
+sources:
+  weather:
+    enabled: true
+    city: "Seoul"
+  rss:
+    enabled: true
+    feeds:
+      - url: "https://news.ycombinator.com/rss"
+        label: "Hacker News"
+      - url: "https://feeds.feedburner.com/TechCrunch"
+        label: "TechCrunch"
+  github:
+    enabled: true
+    repos:
+      - "my-org/my-repo"
