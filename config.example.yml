@@ -11,11 +11,14 @@ sources:
     enabled: true
     feeds:
       # 한국 경제/주식
-      - url: "https://www.hankyung.com/feed/economy"
-        label: "한경 경제"
+      - url: "https://www.mk.co.kr/rss/40300001/"
+        label: "매일경제"
         count: 2
-      - url: "https://rss.mt.co.kr/mt/rss/news_economy.xml"
-        label: "머니투데이"
+      - url: "https://www.mk.co.kr/rss/50200011/"
+        label: "매일경제 증권"
+        count: 2
+      - url: "https://biz.chosun.com/arc/outboundfeeds/rss/category/stock/?outputType=xml"
+        label: "조선비즈 증권"
         count: 2
 
       # 미국 경제/주식
