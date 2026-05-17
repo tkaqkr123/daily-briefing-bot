@@ -38,8 +38,8 @@ sources:
         count: 2
 
       # AI
-      - url: "https://venturebeat.com/category/ai/feed/"
-        label: "VentureBeat AI"
+      - url: "https://www.technologyreview.com/topic/artificial-intelligence/feed"
+        label: "MIT Tech Review AI"
         count: 2
       - url: "https://techcrunch.com/category/artificial-intelligence/feed/"
         label: "TechCrunch AI"
