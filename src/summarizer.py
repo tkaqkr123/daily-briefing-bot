@@ -1,6 +1,7 @@
 import os
-import google.generativeai as genai
 from dataclasses import dataclass, field
+from google import genai
+from google.genai import types
 from .fetchers.base import FetchResult
 
 SYSTEM_PROMPT = """당신은 친근하고 유익한 일일 브리핑 어시스턴트입니다.
@@ -17,11 +18,7 @@ class SummaryResult:
 
 class AISummarizer:
     def __init__(self):
-        genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-        self.model = genai.GenerativeModel(
-            model_name="gemini-1.5-flash",
-            system_instruction=SYSTEM_PROMPT,
-        )
+        self.client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
     def summarize(self, results: list[FetchResult]) -> SummaryResult:
         successful = [r for r in results if r.success and r.content]
@@ -30,7 +27,13 @@ class AISummarizer:
 
         context = "\n\n".join(f"[{r.label}]\n{r.content}" for r in successful)
         try:
-            response = self.model.generate_content(context)
+            response = self.client.models.generate_content(
+                model="gemini-1.5-flash",
+                contents=context,
+                config=types.GenerateContentConfig(
+                    system_instruction=SYSTEM_PROMPT,
+                ),
+            )
             return SummaryResult(text=response.text, success=True)
         except Exception as e:
             return SummaryResult(text="", success=False, error=str(e))
