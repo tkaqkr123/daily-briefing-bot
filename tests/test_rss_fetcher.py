@@ -34,11 +34,12 @@ def test_rss_fetcher_returns_headline_without_link():
     assert "Article No Link" in result.content
 
 
-def test_rss_fetcher_limits_to_3_per_feed():
+def test_rss_fetcher_limits_to_count_per_feed():
     mock_feed = MagicMock()
     mock_feed.entries = [_make_entry(f"Article {i}", f"https://example.com/{i}") for i in range(10)]
+    feeds_with_count = [{"url": "http://example.com/rss", "label": "TestFeed", "count": 3}]
     with patch("feedparser.parse", return_value=mock_feed):
-        result = RssFetcher(feeds=FEEDS).fetch()
+        result = RssFetcher(feeds=feeds_with_count).fetch()
     assert result.content.count("Article") == 3
 
 

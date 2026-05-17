@@ -11,7 +11,7 @@ class RssFetcher(BaseFetcher):
             headlines = []
             for feed_cfg in self.feeds:
                 feed = feedparser.parse(feed_cfg["url"])
-                for entry in feed.entries[:3]:
+                for entry in feed.entries[:feed_cfg.get("count", 2)]:
                     link = getattr(entry, "link", "")
                     if link:
                         headlines.append(f"<{link}|[{feed_cfg['label']}] {entry.title}>")

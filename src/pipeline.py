@@ -16,7 +16,7 @@ def build_fetchers(config: AppConfig) -> list[BaseFetcher]:
     if config.sources.weather.enabled:
         fetchers.append(WeatherFetcher(city=config.sources.weather.city))
     if config.sources.rss.enabled and config.sources.rss.feeds:
-        feeds = [{"url": f.url, "label": f.label} for f in config.sources.rss.feeds]
+        feeds = [{"url": f.url, "label": f.label, "count": f.count} for f in config.sources.rss.feeds]
         fetchers.append(RssFetcher(feeds=feeds))
     if config.sources.github.enabled and config.sources.github.repos:
         fetchers.append(GithubFetcher(repos=config.sources.github.repos))

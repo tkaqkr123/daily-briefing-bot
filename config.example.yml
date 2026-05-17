@@ -10,12 +10,38 @@ sources:
   rss:
     enabled: true
     feeds:
-      - url: "https://rss.etnews.com/Section901.xml"
-        label: "전자신문"
-      - url: "https://www.bloter.net/feed"
-        label: "블로터"
-      - url: "https://news.ycombinator.com/rss"
-        label: "Hacker News"
+      # 한국 경제/주식
+      - url: "https://www.hankyung.com/feed/economy"
+        label: "한경 경제"
+        count: 2
+      - url: "https://rss.mt.co.kr/mt/rss/news_economy.xml"
+        label: "머니투데이"
+        count: 2
+
+      # 미국 경제/주식
+      - url: "https://feeds.marketwatch.com/marketwatch/topstories/"
+        label: "MarketWatch"
+        count: 2
+      - url: "https://www.cnbc.com/id/10000664/device/rss/rss.html"
+        label: "CNBC Markets"
+        count: 2
+
+      # Java / Spring
+      - url: "https://www.baeldung.com/feed/"
+        label: "Baeldung"
+        count: 2
+      - url: "https://spring.io/blog.atom"
+        label: "Spring Blog"
+        count: 1
+
+      # AI
+      - url: "https://venturebeat.com/category/ai/feed/"
+        label: "VentureBeat AI"
+        count: 2
+      - url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+        label: "TechCrunch AI"
+        count: 2
+
   github:
     enabled: false
     repos: []

@@ -14,6 +14,7 @@ class WeatherConfig(BaseModel):
 class RssFeed(BaseModel):
     url: str
     label: str
+    count: int = 2
 
 
 class RssConfig(BaseModel):
