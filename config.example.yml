@@ -30,12 +30,12 @@ sources:
         count: 2
 
       # Java / Spring
-      - url: "https://www.baeldung.com/feed/"
-        label: "Baeldung"
+      - url: "https://feeds.dzone.com/java"
+        label: "DZone Java"
         count: 2
       - url: "https://spring.io/blog.atom"
         label: "Spring Blog"
-        count: 1
+        count: 2
 
       # AI
       - url: "https://venturebeat.com/category/ai/feed/"
