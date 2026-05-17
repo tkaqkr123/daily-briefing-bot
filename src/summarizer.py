@@ -28,7 +28,7 @@ class AISummarizer:
         context = "\n\n".join(f"[{r.label}]\n{r.content}" for r in successful)
         try:
             response = self.client.models.generate_content(
-                model="gemini-1.5-flash",
+                model="gemini-2.0-flash",
                 contents=context,
                 config=types.GenerateContentConfig(
                     system_instruction=SYSTEM_PROMPT,

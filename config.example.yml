@@ -15,6 +15,5 @@ sources:
       - url: "https://feeds.feedburner.com/TechCrunch"
         label: "TechCrunch"
   github:
-    enabled: true
-    repos:
-      - "my-org/my-repo"
+    enabled: false
+    repos: []
